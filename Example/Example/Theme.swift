@@ -100,13 +100,17 @@ class BluoTheme: Themed, Assetable {
     }
     
     func fontSet(for asset: FontAsset) -> FontSet {
-        switch asset {
-        case .titleFont:
-            return .init(
-                light: Font.custom("Gill Sans", size: 30).bold(),
-                dark: Font.custom("Marker Felt Thin", size: 30).bold()
-            )
-        }
+      switch asset {
+      case .titleFont:
+        let lightDescriptor = UIFontDescriptor(name: "Gill Sans", size: 30)
+        let lightFont = UIFont(descriptor: lightDescriptor.withSymbolicTraits(.traitBold)!, size: lightDescriptor.pointSize)
+        let darkDescriptor = UIFontDescriptor(name: "Marker Felt Thin", size: 30)
+        let darkFont = UIFont(descriptor: darkDescriptor.withSymbolicTraits(.traitBold)!, size: darkDescriptor.pointSize)
+        return .init(
+            light: lightFont,
+            dark: darkFont
+        )
+      }
     }
     
     func gradientSet(for asset: GradeintAsset) -> GradientSet {
@@ -154,15 +158,20 @@ class JadoTheme: Themed, Assetable {
     }
     
     func fontSet(for asset: FontAsset) -> FontSet {
-        switch asset {
-        case .titleFont:
-            return .init(
-                light: Font.custom("Gill Sans", size: 30).bold(),
-                dark: Font.custom("Marker Felt Thin", size: 30).bold()
-            )
-        }
+      switch asset {
+      case .titleFont:
+        let lightDescriptor = UIFontDescriptor(name: "Gill Sans", size: 30)
+        let lightFont = UIFont(descriptor: lightDescriptor.withSymbolicTraits(.traitBold)!, size: lightDescriptor.pointSize)
+        let darkDescriptor = UIFontDescriptor(name: "Marker Felt Thin", size: 30)
+        let darkFont = UIFont(descriptor: darkDescriptor.withSymbolicTraits(.traitBold)!, size: darkDescriptor.pointSize)
+        return .init(
+            light: lightFont,
+            dark: darkFont
+        )
+      }
     }
     
+  
     func gradientSet(for asset: GradeintAsset) -> GradientSet {
         switch asset {
         case .backgroundGradient:

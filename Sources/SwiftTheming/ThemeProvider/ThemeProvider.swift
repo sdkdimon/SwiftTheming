@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 import Combine
 
 /// An observable object that manages predefined themes and appearances of an app.
@@ -80,7 +81,7 @@ public class ThemeProvider: ObservableObject {
     ///   - preferredAppearance: preferred appearance to override
     ///   - theme: theme to override
     /// - Returns: font
-    func font(for asset: FontAssetable, preferredAppearance: PreferredAppearance?, on theme: Theme?) -> Font {
+    func font(for asset: FontAssetable, preferredAppearance: PreferredAppearance?, on theme: Theme?) -> UIFont {
         switch (theme ?? self.theme).fontSet(for: asset).appearance {
         case .static(let font): return font
         case .dynamic(let light, let dark):
